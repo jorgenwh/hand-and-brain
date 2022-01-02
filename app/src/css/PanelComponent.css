@@ -1,0 +1,72 @@
+.panelContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 250px;
+}
+
+.stockfishInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
+}
+
+.stockfishTitle {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 2.5em;
+  margin: 0 auto;
+}
+
+.stockfishInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.stockfishInfoEntry {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 1.75em;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.settingsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1em;
+}
+
+.settingsTitle {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 2.5em;
+  margin: 0 auto;
+}
+
+.settingsOptions {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.settingsOptionEntry {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 1.75em;
+  margin: 0.5em 0 0.5em 0;
+}
+
+.settingsCheckbox {
+  margin: auto 0 auto 1em;
+  width: 1.5em;
+  height: 1.5em;
+}

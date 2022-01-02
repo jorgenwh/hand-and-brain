@@ -1,27 +1,20 @@
 import React from "react"
-import { useState, useEffect } from "react"
+import './App.css'
 
-import { Chessboard } from "react-chessboard"
-import { Chess } from "chess.js"
-
-import './App.css';
+import ChessComponent from "./components/ChessComponent"
+import PanelComponent from "./components/PanelComponent"
 
 function App() {
-  const [game, setGame] = useState(new Chess())
-
-  // function safeGameMutate(modify) {
-  //   setGame((g) => {
-  //     const update = { ...g }
-  //     modify(update)
-  //     return update
-  //   })
-  // }
-
   return (
     <div className="container">
-      <Chessboard id="BasicBoard"/>
+      <div className="left">
+        <ChessComponent/>
+      </div>
+      <div className="right">
+        <PanelComponent/> 
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
