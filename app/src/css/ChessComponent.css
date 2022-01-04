@@ -25,6 +25,13 @@
   margin: 0 0 0 1em;
 }
 
+.fenDisplay {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 1.1em;
+  margin: 0.2em auto 0 0;
+}
+
 .chessComponentBody {
   display: flex;
   flex-direction: row;

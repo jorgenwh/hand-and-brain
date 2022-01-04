@@ -1,5 +1,5 @@
 import React from "react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Chessboard } from "react-chessboard"
 import * as Chess from 'chess.js'
 
@@ -36,6 +36,8 @@ function ChessComponent(props) {
     let newHistory = history.slice()
     newHistory.push(curFen)
     setHistory(newHistory)
+    props.moveApplied()
+    props.setFen(game.fen())
     return true
   }
 
@@ -46,6 +48,8 @@ function ChessComponent(props) {
     const fen = hist.pop()
     game.load(fen)
     setHistory(hist)
+    props.moveApplied()
+    props.setFen(game.fen())
   }
 
   const flip = () => {
@@ -53,6 +57,13 @@ function ChessComponent(props) {
       setBoardOrientation("black")
     else
       setBoardOrientation("white")
+  }
+
+  if (props.bestMove !== "loading ...") {
+    console.log(props.bestMove)
+    console.log(props.bestMove.substring(0, 2))
+    const piece = game.get(props.bestMove.substring(0, 2))["type"]
+    props.setBestPiece(piece)
   }
 
   return (
@@ -64,6 +75,7 @@ function ChessComponent(props) {
       <div className="chessComponentBody">
         <Chessboard className="chessboard" position={game.fen()} onPieceDrop={onDrop} boardOrientation={boardOrientation}/>
       </div>
+      <div className="fenDisplay">{game.fen()}</div>
       <div className="chessComponentFooter">
         <h2 className="turnIndicatorLabel">Turn:</h2>
         {(game.turn() === "w") ? <div className="turnIndicatorCircleW"></div> : <div className="turnIndicatorCircleB"></div>}

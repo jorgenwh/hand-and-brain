@@ -4,10 +4,6 @@ import { useState } from "react"
 import "../css/PanelComponent.css"
 
 function InfoComponent(props) {
-  const [stockfishEvaluation, setStockfishEvaluation] = useState(0)
-  const [stockfishMove, setStockfishMove] = useState("-")
-  const [stockfishPiece, setStockfishPiece] = useState("-")
-
   const [showStockfishEvaluation, setShowStockfishEvaluation] = useState(false)
   const [showStockfishMove, setShowStockfishMove] = useState(false)
   const [showStockfishPiece, setShowStockfishPiece] = useState(true)
@@ -41,15 +37,15 @@ function InfoComponent(props) {
         <div className="stockfishInfo">
           <div className="stockfishInfoEntry">
             <div>Piece:</div>
-            <div>{showStockfishPiece ? stockfishPiece : "-"}</div>
+            <div>{showStockfishPiece ? props.bestPiece : "-"}</div>
           </div>
           <div className="stockfishInfoEntry">
             <div>Evaluation:</div>
-            <div>{showStockfishEvaluation ? stockfishEvaluation : "-"}</div>
+            <div>{showStockfishEvaluation ? props.evaluation : "-"}</div>
           </div>
           <div className="stockfishInfoEntry">
             <div>Move:</div>
-            <div>{showStockfishMove ? stockfishMove : "-"}</div>
+            <div>{showStockfishMove ? props.bestMove : "-"}</div>
           </div>
         </div>
       </div>
