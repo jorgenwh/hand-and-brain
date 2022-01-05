@@ -6,7 +6,7 @@ app = Flask(__name__)
 CORS(app)
 
 local_fen = None
-local_stockfish = Stockfish()
+local_stockfish = Stockfish("stockfish_14.1_win_x64_avx2.exe")
 
 @app.route("/")
 def landing():
@@ -35,7 +35,7 @@ def get():
     local_stockfish.set_fen_position(local_fen)
 
     move = local_stockfish.get_best_move()
-    evaluation = local_stockfish.get_evaluation()["value"] / 100
+    evaluation = local_stockfish.get_evaluation()
 
     return jsonify({"success": True, "bestMove": move, "evaluation": evaluation})
   except:

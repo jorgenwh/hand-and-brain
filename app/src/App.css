@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin: 2em 2em auto 2em;
 }
 
 .left {
@@ -10,9 +11,109 @@
   justify-content: center;
 }
 
+.leftHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto 1em auto;
+}
+
+.headerButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.resetButton {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 1.25em;
+}
+
+.popButton {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 1.25em;
+  margin: 0 1em 0 1em;
+}
+
+.flipButton {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 1.25em;
+}
+
+.fenInputComponent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1em 0 0 0;
+  min-width: 517.5px;
+}
+
+.setFenInput {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 1.15em;
+  min-width: 90%;
+  margin: auto auto auto 0;
+}
+
+.setFenButton {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 1.25em;
+  margin: 0 0 0 2em;
+}
+
+.leftBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* box-shadow: 2px 2px 7px gray; */
+}
+
+.leftFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.fenDisplay {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 1.1em;
+  min-width: 98.75%;
+  margin: 0.2em auto 0 0;
+}
+
+.turnIndicatorLabel {
+  font-family: sans-serif;
+  font-weight: lighter;
+  font-size: 1.5em;
+}
+
+.turnIndicatorCircleW {
+  border-radius: 50%;
+  border: 0.01em solid black;
+  width: 41px;
+  height: 41px;
+  margin: auto auto auto 1em;
+  background-color: white;
+}
+
+.turnIndicatorCircleB {
+  border-radius: 50%;
+  border: 0.01em solid black;
+  width: 41px;
+  height: 41px;
+  margin: auto auto auto 1em;
+  background-color: black;
+}
+
 .right {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 10em 0 0;
+  margin: 0 10em 0 2em;
 }

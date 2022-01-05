@@ -4,48 +4,48 @@ import { useState } from "react"
 import "../css/PanelComponent.css"
 
 function InfoComponent(props) {
-  const [showStockfishEvaluation, setShowStockfishEvaluation] = useState(false)
-  const [showStockfishMove, setShowStockfishMove] = useState(false)
-  const [showStockfishPiece, setShowStockfishPiece] = useState(true)
+  const [showEngineEvaluation, setShowEngineEvaluation] = useState(true)
+  const [showEngineMove, setShowEngineMove] = useState(true)
+  const [showEnginePiece, setShowEnginePiece] = useState(true)
 
-  const onShowStockfishEvaluationChange = (event) => {
+  const onShowEngineEvaluationChange = (event) => {
     if (event.target.checked)
-      setShowStockfishEvaluation(true)
+      setShowEngineEvaluation(true)
     else
-      setShowStockfishEvaluation(false)
+      setShowEngineEvaluation(false)
   }
 
-  const onShowStockfishMoveChange = (event) => {
+  const onShowEngineMoveChange = (event) => {
     if (event.target.checked)
-      setShowStockfishMove(true)
+      setShowEngineMove(true)
     else
-      setShowStockfishMove(false)
+      setShowEngineMove(false)
   }
 
-  const onShowStockfishPieceChange = (event) => {
+  const onShowEnginePieceChange = (event) => {
     if (event.target.checked)
-      setShowStockfishPiece(true)
+      setShowEnginePiece(true)
     else
-      setShowStockfishPiece(false)
+      setShowEnginePiece(false)
   }
 
   return (
     <div className="panelContainer">
 
-      <div className="stockfishInfoContainer">
-        <h2 className="stockfishTitle">Stockfish</h2>
-        <div className="stockfishInfo">
-          <div className="stockfishInfoEntry">
+      <div className="engineInfoContainer">
+        <h2 className="engineTitle">Engine</h2>
+        <div className="engineInfo">
+          <div className="engineInfoEntry">
             <div>Piece:</div>
-            <div>{showStockfishPiece ? props.bestPiece : "-"}</div>
+            <div>{showEnginePiece ? props.bestPiece : "-"}</div>
           </div>
-          <div className="stockfishInfoEntry">
+          <div className="engineInfoEntry">
             <div>Evaluation:</div>
-            <div>{showStockfishEvaluation ? props.evaluation : "-"}</div>
+            <div>{showEngineEvaluation ? props.evaluation : "-"}</div>
           </div>
-          <div className="stockfishInfoEntry">
+          <div className="engineInfoEntry">
             <div>Move:</div>
-            <div>{showStockfishMove ? props.bestMove : "-"}</div>
+            <div onClick={props.playBestMove}>{showEngineMove ? props.bestMove : "-"}</div>
           </div>
         </div>
       </div>
@@ -57,9 +57,9 @@ function InfoComponent(props) {
             <div>Show piece</div>
             <input 
               type="checkbox" 
-              onChange={onShowStockfishPieceChange} 
+              onChange={onShowEnginePieceChange} 
               defaultChecked={true}
-              name="showStockfishPiece" 
+              name="showEnginePiece" 
               className="settingsCheckbox"
             />
           </div>
@@ -67,9 +67,9 @@ function InfoComponent(props) {
             <div>Show evaluation</div>
             <input 
               type="checkbox" 
-              onChange={onShowStockfishEvaluationChange} 
-              defaultChecked={false}
-              name="showStockfishEvaluation" 
+              onChange={onShowEngineEvaluationChange} 
+              defaultChecked={true}
+              name="showEngineEvaluation" 
               className="settingsCheckbox"
             />
           </div>
@@ -77,9 +77,9 @@ function InfoComponent(props) {
             <div>Show move</div>
             <input 
               type="checkbox" 
-              onChange={onShowStockfishMoveChange} 
-              defaultChecked={false}
-              name="showStockfishMove" 
+              onChange={onShowEngineMoveChange} 
+              defaultChecked={true}
+              name="showEngineMove" 
               className="settingsCheckbox"
             />
           </div>
